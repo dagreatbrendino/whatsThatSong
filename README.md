@@ -28,9 +28,10 @@ Sometimes the media propetry cannot be properly parsed into a JSON object in whi
 Firebase is utilzed to allow users to make an account so that they can save songs to be viewed again later. This project utilizes the *Auth()* method of firebase to create and sign in users. Upon succesfully creating an account, users will be given a directory associated with their username in our database. The songs the user choses to save will be stored in a directory called songsSaved.
 
 When a user saves a song, all of the information that was retreived from the API call is saved in database. Below is an example of what this looks like in firebase. 
-
+![Firebase Structure](assets/images/whatsthatsongFBExample.png)
 #### Accessing Saved Songs
 The saved songs are brought into the client side and stored in an array whenever a user signs in. This array gets updated anytime the firebase database reference savedSongs is updated. Users access this array by clicking the saved songs button near the search bar. This will open a table with all of the user's saved songs. Users can click on songs to access them again or remove them from their saved songs by clicking the x. 
+![Saved Songs Table](assets/images/whatsthatsongSavedTB.png)
 ### jQuery
 The jQuery library is utilized for capturing user input, and DOM manipulation. Most of the functionality of this app is powered by jQuery event listeners that call the relevant functions when certain elements are clicked. 
 ### Javascript
