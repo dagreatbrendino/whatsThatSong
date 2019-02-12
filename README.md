@@ -32,6 +32,23 @@ When a user saves a song, all of the information that was retreived from the API
 #### Accessing Saved Songs
 The saved songs are brought into the client side and stored in an array whenever a user signs in. This array gets updated anytime the firebase database reference savedSongs is updated. Users access this array by clicking the saved songs button near the search bar. This will open a table with all of the user's saved songs. Users can click on songs to access them again or remove them from their saved songs by clicking the x. 
 ### jQuery
-The jQuery library is utilized for capturing user input, and DOM manipulation. 
+The jQuery library is utilized for capturing user input, and DOM manipulation. Most of the functionality of this app is powered by jQuery event listeners that call the relevant functions when certain elements are clicked. 
 ### Javascript
-Native javascript is used to store a lot of the client side data. 
+Native javascript is used to store necessarry data on the client side. This project utilizes arrays and objects to store data from the Audd.io API and Firebase. Below is a brief description of the functions. For a more detailed explaination of each function read the comments in the source code.
+  * **signup(email, password, disName)** - this fucntion takes three arguments and attempts to use Firebase.Auth() to create a user account with the given credentials
+  * **signin(email, password)** - this function takes the given credentials and attempts to sign a user in 
+  * **signout()** - this function signs a user out and refreshes the page
+  * **saveSong(song)** - this function will save the invoking song to the user's songsSaved directory in firebase
+  * **unSaveSong(song)** - this function will remove the invoking song from the user's songsSaved directory
+  * **getSongsByLyrics(query)** - this function will retreive songs using the Audd.io API with the provided query and then call the function resultsToDisplay()
+  * **resultsToDisplay()** - this function will display the search results the results to the DOM
+  * **validator()** - this function will remove any database unfriendly characters from the song title and artist name so that they can always be saved to the database
+  * **savedToDisplay()** - this function will get all of the signed in user's saved songs and display them in a table
+ 
+ ### Animate
+ The animate.js library is used to make records spin. This spinning image is used as a loading icon while the Audd.io API attempts to retrieve results. 
+ 
+ ### CSS
+ The Bootstrap grid used to make the layout responsive and simple. Modals are also used to make the sign up/sign in feature more well presented. 
+  
+  
